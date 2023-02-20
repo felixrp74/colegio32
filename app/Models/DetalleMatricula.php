@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class DetalleMatricula
  * 
  * @property int $matriculas_idmatricula
- * @property int $curso_idcurso
+ * @property int $cursos_idcurso
  * @property float|null $nota1
  * 
  * @property Matricula $matricula
@@ -28,7 +28,7 @@ class DetalleMatricula extends Model
 
 	protected $casts = [
 		'matriculas_idmatricula' => 'int',
-		'curso_idcurso' => 'int',
+		'cursos_idcurso' => 'int',
 		'nota1' => 'float'
 	];
 
@@ -43,6 +43,6 @@ class DetalleMatricula extends Model
 
 	public function curso()
 	{
-		return $this->belongsTo(Curso::class, 'curso_idcurso');
+		return $this->belongsTo(Curso::class, 'cursos_idcurso');
 	}
 }

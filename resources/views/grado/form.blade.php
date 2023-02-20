@@ -1,7 +1,7 @@
 formulario 
 
-<label for="Descripcion">Descripcion</label>
-<input type="text" name="Descripcion" value="{{ isset($grado->descripcion)?$grado->descripcion:'' }}" id="Descripcion">
+<label for="Idestudiante">Id estudiante</label>
+<input type="text" name="Idestudiante" value="{{ isset($grado->descripcion)?$grado->descripcion:'' }}" id="Descripcion">
 <br>
 <label for="Enviar">Enviar</label>
 <input type="submit" value="Guardar datos">

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\GradoController;
+use App\Http\Controllers\MatriculaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,4 @@ Route::get('/', function(){
 Route::resource('estudiante', EstudianteController::class);
 Route::resource('docente', DocenteController::class);
 Route::resource('grado', GradoController::class);
+Route::resource('matricula', MatriculaController::class);

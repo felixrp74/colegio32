@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property Carbon|null $fecha_asignacion
  * @property int $asignaciones_idasignacion
- * @property int $curso_idcurso
+ * @property int $cursos_idcurso
  * 
  * @property Asignacione $asignacione
  * @property Curso $curso
@@ -29,7 +29,7 @@ class DetalleAsignacione extends Model
 
 	protected $casts = [
 		'asignaciones_idasignacion' => 'int',
-		'curso_idcurso' => 'int'
+		'cursos_idcurso' => 'int'
 	];
 
 	protected $dates = [
@@ -47,6 +47,6 @@ class DetalleAsignacione extends Model
 
 	public function curso()
 	{
-		return $this->belongsTo(Curso::class, 'curso_idcurso');
+		return $this->belongsTo(Curso::class, 'cursos_idcurso');
 	}
 }

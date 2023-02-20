@@ -15,10 +15,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idcurso
  * @property string|null $descripcion
  * @property string|null $especialidad
- * @property int $seccion_idseccion
- * @property int $seccion_grado_idgrado
+ * @property int $niveles_idniveles
  * 
- * @property Seccion $seccion
+ * @property Nivele $nivele
  * @property Collection|DetalleAsignacione[] $detalle_asignaciones
  * @property Collection|DetalleMatricula[] $detalle_matriculas
  *
@@ -26,12 +25,11 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Curso extends Model
 {
-	protected $table = 'curso';
+	protected $table = 'cursos';
 	public $timestamps = false;
 
 	protected $casts = [
-		'seccion_idseccion' => 'int',
-		'seccion_grado_idgrado' => 'int'
+		'niveles_idniveles' => 'int'
 	];
 
 	protected $fillable = [
@@ -39,20 +37,18 @@ class Curso extends Model
 		'especialidad'
 	];
 
-	public function seccion()
+	public function nivele()
 	{
-		return $this->belongsTo(Seccion::class, 'seccion_idseccion')
-					->where('seccion.idseccion', '=', 'curso.seccion_idseccion')
-					->where('seccion.grado_idgrado', '=', 'curso.seccion_grado_idgrado');
+		return $this->belongsTo(Nivele::class, 'niveles_idniveles');
 	}
 
 	public function detalle_asignaciones()
 	{
-		return $this->hasMany(DetalleAsignacione::class, 'curso_idcurso');
+		return $this->hasMany(DetalleAsignacione::class, 'cursos_idcurso');
 	}
 
 	public function detalle_matriculas()
 	{
-		return $this->hasMany(DetalleMatricula::class, 'curso_idcurso');
+		return $this->hasMany(DetalleMatricula::class, 'cursos_idcurso');
 	}
 }
