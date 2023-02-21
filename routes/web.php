@@ -5,6 +5,8 @@ use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\GradoController;
 use App\Http\Controllers\MatriculaController;
+use App\Http\Controllers\ReporteEstudianteController;
+use App\Http\Controllers\AsignacionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,5 @@ Route::resource('estudiante', EstudianteController::class);
 Route::resource('docente', DocenteController::class);
 Route::resource('grado', GradoController::class);
 Route::resource('matricula', MatriculaController::class);
+Route::resource('reportenotas', ReporteEstudianteController::class);
+Route::resource('asignacion', AsignacionController::class);
