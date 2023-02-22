@@ -62,7 +62,7 @@ class DocenteController extends Controller
         }*/
 
         Docente::insert($datosDocente);
-        return redirect('/docente')->with('mensaje', 'Empleado agregado con exito');
+        return redirect('/docente')->with('mensaje', 'Docente agregado con exito');
     }
 
     /**
