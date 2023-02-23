@@ -1,12 +1,21 @@
-formulario 
 
-<label for="Nombre">Nombre</label>
-<input type="text" name="Nombre" value="{{ isset($docente->nombre)?$docente->nombre:'' }}" id="Nombre">
+
+<label for="Curso">Curso</label>
+<input type="text" name="Curso" id="Curso" value="{{ isset($datos->descripcion)?$datos->descripcion:'' }}" >
 <br>
-<label for="Profesion">Profesion</label>
-<input type="text" name="Profesion" value="{{ isset($docente->profesion)?$docente->profesion:'' }}" id="Profesion">
+
+<label for="Especialidad">Especialidad</label>
+<input type="text" name="Especialidad" id="Especialidad" value="{{ isset($datos->especialidad)?$datos->especialidad:'' }}" >
 <br>
-<label for="Enviar">Enviar</label>
+
+<label for="Grado">Grado</label>
+<input type="text" name="Grado" id="Grado" value="{{ isset($datos->grado)?$datos->grado:'' }}" >
+<br>
+
+<label for="Seccion">Seccion</label>
+<input type="text" name="Seccion" id="Seccion" value="{{ isset($datos->seccion)?$datos->seccion:'' }}" >
+<br>
+
 <input type="submit" value="Guardar datos">
 
-<a href="{{ url('/docente') }}">Regresar</a>
+<a href="{{ url('/curso') }}">Regresar</a>
