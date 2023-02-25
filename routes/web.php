@@ -8,6 +8,8 @@ use App\Http\Controllers\MatriculaController;
 use App\Http\Controllers\ReporteEstudianteController;
 use App\Http\Controllers\AsignacionController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\ColocacionNotasController;
+use App\Http\Controllers\VerAsignacionesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +31,5 @@ Route::resource('matricula', MatriculaController::class);
 Route::resource('reportenotas', ReporteEstudianteController::class);
 Route::resource('asignacion', AsignacionController::class);
 Route::resource('curso', CursoController::class);
+Route::resource('colocacionnotas', ColocacionNotasController::class);
+Route::resource('verasignaciones', VerAsignacionesController::class);

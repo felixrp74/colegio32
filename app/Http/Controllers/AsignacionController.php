@@ -69,14 +69,31 @@ class AsignacionController extends Controller
         return redirect('/asignacion')->with('mensaje', 'Asignacion agregado con exito');
     }
  
-    public function show()
+    public function show($id)
     {
         //
+        $datos['asignacioness']  = DB::table('docentes')
+        ->join('asignaciones', 'asignaciones.docentes_iddocente', '=', 'docentes.iddocente')
+        ->join('detalle_asignaciones', 'detalle_asignaciones.asignaciones_idasignacion', '=', 'asignaciones.docentes_iddocente')
+        ->join('cursos', 'cursos.idcurso', '=', 'detalle_asignaciones.cursos_idcurso')
+        ->join('niveles', 'niveles.idniveles', '=', 'cursos.niveles_idniveles')
+        ->join('detalle_matriculas', 'detalle_matriculas.cursos_idcurso', '=', 'cursos.idcurso')
+        ->join('matriculas', 'matriculas.idmatricula', '=', 'detalle_matriculas.matriculas_idmatricula')
+        ->join('estudiantes', 'estudiantes.idestudiante', '=', 'matriculas.estudiante_idestudiante')
+            ->where('iddocente', $id)
+            ->select('asignaciones.idasignacion', 'docentes.nombre AS nombreDocente', 'estudiantes.*',
+            'cursos.*', 'niveles.*', 'detalle_matriculas.*', 'matriculas.*')
+            ->get();
+
+        //dump($datos);
+            
+        return view('asignacion.vercursos', $datos);
     }
  
     public function edit($id)
     {
         //
+        
         
     }
 

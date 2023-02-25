@@ -7,6 +7,8 @@
             <td style="border: solid 1px;"># Id Docente</td>
             <td style="border: solid 1px;">Nombre </td>
             <td style="border: solid 1px;">Profesion </td>
+            <td style="border: solid 1px;">Acciones </td>
+            <td style="border: solid 1px;">Ver mas </td>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +27,9 @@
                     <input type="submit" onclick="return confirm('quieres borrar?')" value="Borrar">
                 </form>
 
+            </td>
+            <td style="border: solid 1px;">
+                <a href="{{ url('/asignacion/'.$asignacion->idasignacion) }}">Ver mas </a>
             </td>
         </tr>
         @endforeach
